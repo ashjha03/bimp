@@ -9,7 +9,10 @@ const Featured = ({ title, description }) => {
         <p className="text-lg font-serif pl-2">{description}</p>
       </div>
       <div className="profiles grid grid-cols-4 gap-4 py-4">
-        <Link href="/ashish" className="profile rounded-xl shadow-lg py-4">
+        <Link
+          href="/creator/ashish"
+          className="profile rounded-xl shadow-lg py-4"
+        >
           <Image
             src="/img/profile.png"
             alt="Creator"
@@ -29,7 +32,10 @@ const Featured = ({ title, description }) => {
             </p>
           </div>
         </Link>
-        <Link href="/ashish" className="profile rounded-xl shadow-lg py-4">
+        <Link
+          href="/creator/ashish"
+          className="profile rounded-xl shadow-lg py-4"
+        >
           <Image
             src="/img/profile.png"
             alt="Creator"
@@ -49,7 +55,10 @@ const Featured = ({ title, description }) => {
             </p>
           </div>
         </Link>
-        <Link href="/ashish" className="profile rounded-xl shadow-lg py-4">
+        <Link
+          href="/creator/ashish"
+          className="profile rounded-xl shadow-lg py-4"
+        >
           <Image
             src="/img/profile.png"
             alt="Creator"
@@ -69,7 +78,10 @@ const Featured = ({ title, description }) => {
             </p>
           </div>
         </Link>
-        <Link href="/ashish" className="profile rounded-xl shadow-lg py-4">
+        <Link
+          href="/creator/ashish"
+          className="profile rounded-xl shadow-lg py-4"
+        >
           <Image
             src="/img/profile.png"
             alt="Creator"
