@@ -1,3 +1,4 @@
+import Featured from "@/components/Featured";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -13,7 +14,18 @@ export default function Home() {
           generate distinctive content for your brand effortlessly
         </p>
       </main>
-
+      <Featured
+        title="Featured Profiles"
+        description="Hire top influencers across all platforms"
+      />
+      <Featured
+        title="Instagram"
+        description="Hire top influencers from Instagram"
+      />
+      <Featured
+        title="Youtube"
+        description="Hire top influencers from Youtube"
+      />
       <hr />
       <div className="work py-12 px-20">
         <h1 className="text-4xl font-extralight text-pink-600">How we work?</h1>
