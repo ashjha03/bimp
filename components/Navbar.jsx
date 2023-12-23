@@ -11,8 +11,12 @@ const Navbar = () => {
         <li>Explore</li>
         <li>How it works</li>
         <li>Login</li>
-        <li>Join as Brand</li>
-        <li>Join as Creator</li>
+        <li>
+          <Link href="/join/brand"> Join as Brand</Link>
+        </li>
+        <li>
+          <Link href="/join/creator"> Join as Creator</Link>
+        </li>
       </ul>
     </nav>
   );
