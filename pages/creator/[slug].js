@@ -56,13 +56,13 @@ const page = () => {
             <div className="box border-2 rounded-lg border-pink-700 p-3">
               <div className="flex justify-between">
                 <h1 className="text-xl">1 Instagram Post Feed Photo</h1>
-                <h3 className="text-xl">7,500</h3>
+                <h3 className="text-xl">₹ 7,500</h3>
               </div>
             </div>
             <div className="box border-2 rounded-lg border-pink-700 p-3">
               <div className="flex justify-between">
                 <h1 className="text-xl">1 Instagram Reel</h1>
-                <h3 className="text-xl">₹10,000</h3>
+                <h3 className="text-xl">₹ 10,000</h3>
               </div>
             </div>
           </div>
