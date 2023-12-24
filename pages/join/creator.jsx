@@ -1,20 +1,40 @@
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
-import React, { useState } from "react";
+import Creator from "../../models/Creator";
 
-const Creator = () => {
-  const [profileImg, setProfileImg] = useState();
-  const onSubmit = async (e) => {
+const Creators = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(profileImg);
-    const data = new FormData();
-    data.set("profileImg", profileImg);
-    const result = await fetch("../api/uploadImage", {
-      method: "POST",
-      body: data,
+    const name = e.target.name.value;
+    const instagramFollowers = e.target.instagramFollowers.value;
+    const youtubeSubscribers = e.target.youtubeSubscribers.value;
+    const username = e.target.username.value;
+    const address = e.target.address.value;
+    const tagline = e.target.tagline.value;
+    const reelPrice = e.target.reelPrice.value;
+    const profileImg = e.target.profileImg.value;
+    const coverImg = e.target.coverImg.value;
+    const addImg1 = e.target.addImg1.value;
+    const addImg2 = e.target.addImg2.value;
+
+    let creator = new Creator({
+      name,
+      instagramFollowers,
+      youtubeSubscribers,
+      username,
+      address,
+      tagline,
+      reelPrice,
+      profileImg,
+      coverImg,
+      addImg1,
+      addImg2,
     });
-    console.log(result);
+    fetch("/api/addCreator", {
+      method: "POST",
+      body: creator,
+    });
   };
   return (
     <div>
@@ -29,27 +49,39 @@ const Creator = () => {
         </p>
 
         <form
-          action="POST"
-          onSubmit={onSubmit}
+          id="creatorForm"
+          onSubmit={handleSubmit}
           className="max-w-5xl border-2 rounded-xl shadow-lg grid gap-5 mx-auto mt-10 px-12 py-12"
         >
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               Full Name :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="name"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               Instagram followers :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="instagramFollowers"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               Youtube Subscribers :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="youtubeSubscribers"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
@@ -65,30 +97,68 @@ const Creator = () => {
             <label className="text-xl pr-4" htmlFor="">
               State and Country :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="address"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               Tagline :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="tagline"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               Price per Reel :{" "}
             </label>
-            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+            <input
+              type="text"
+              name="reelPrice"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
           </div>
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
-              Profile Image
+              Profile Image :
             </label>
             <input
-              type="file"
+              type="text"
               name="profileImg"
-              onChange={(e) => setProfileImg(e.target.files?.[0])}
               className="p-3 rounded-lg border-2 w-2/3"
             />
+          </div>
+          <div className="input flex items-center justify-between">
+            <label className="text-xl pr-4" htmlFor="">
+              Cover Image :
+            </label>
+            <input
+              type="text"
+              name="coverImg"
+              className="p-3 rounded-lg border-2 w-2/3"
+            />
+          </div>
+          <div className="input flex items-center justify-between">
+            <label className="text-xl pr-4" htmlFor="">
+              Additional Image :
+            </label>
+            <div className="w-2/3 grid gap-2">
+              <input
+                type="text"
+                name="addImg1"
+                className="p-3 rounded-lg border-2"
+              />
+              <input
+                type="text"
+                name="addImg2"
+                className="p-3 rounded-lg border-2"
+              />
+            </div>
           </div>
           <div className="btn text-center px-16">
             <button
@@ -107,4 +177,4 @@ const Creator = () => {
   );
 };
 
-export default Creator;
+export default Creators;

@@ -2,23 +2,16 @@ const mongoose = require("mongoose");
 const CreatorSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
+    instagramFollowers: { type: String, default: "0" },
+    youtubeSubscribers: { type: Array, default: "0" },
     username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
-    role: { type: String, required: true, default: "creator" },
-    phone: { type: String, default: "" },
-    profileImage: { type: String, default: "" },
-    city: { type: String, default: "" },
-    state: { type: String, default: "" },
-
-    category: { type: String, default: "" },
-    platforms: { type: Array, default: [] },
-    bannerImage: { type: String, default: "" },
-    achievments: { type: Array, default: [] },
-    description: { type: String, default: "" },
-    packages: { type: Array, default: [] },
-    rating: { type: Number, default: 0 },
-    reviews: { type: Array, default: [] },
-    sample: { type: Array, default: [] },
+    address: { type: String, default: "" },
+    tagline: { type: String, default: "" },
+    reelPrice: { type: String, default: "" },
+    profileImg: { type: String, default: "" },
+    coverImg: { type: String, default: "" },
+    addImg1: { type: String, default: "" },
+    addImg2: { type: String, default: "" },
   },
   { timestamps: true }
 );
