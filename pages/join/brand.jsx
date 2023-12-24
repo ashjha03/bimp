@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
 
-const brand = () => {
+const Brand = () => {
   return (
     <div>
       <Navbar />
@@ -18,4 +18,4 @@ const brand = () => {
   );
 };
 
-export default brand;
+export default Brand;
