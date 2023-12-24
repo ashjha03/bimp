@@ -1,10 +1,14 @@
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 import React from "react";
 
 const Creator = () => {
   return (
     <div>
+      <Head>
+        <title>BIMP | Join as Creator</title>
+      </Head>
       <Navbar />
       <div className="py-10 px-12">
         <h1 className="text-5xl font-bold text-center pb-3">Join as Creator</h1>
@@ -14,7 +18,7 @@ const Creator = () => {
 
         <form
           action=""
-          className="max-w-5xl border-2 rounded-xl shadow-lg grid gap-8 mx-auto mt-10 px-12 py-16"
+          className="max-w-5xl border-2 rounded-xl shadow-lg grid gap-5 mx-auto mt-10 px-12 py-12"
         >
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
@@ -37,6 +41,24 @@ const Creator = () => {
           <div className="input flex items-center justify-between">
             <label className="text-xl pr-4" htmlFor="">
               User Name :{" "}
+            </label>
+            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+          </div>
+          <div className="input flex items-center justify-between">
+            <label className="text-xl pr-4" htmlFor="">
+              State and Country :{" "}
+            </label>
+            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+          </div>
+          <div className="input flex items-center justify-between">
+            <label className="text-xl pr-4" htmlFor="">
+              Tagline :{" "}
+            </label>
+            <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
+          </div>
+          <div className="input flex items-center justify-between">
+            <label className="text-xl pr-4" htmlFor="">
+              Price per Reel :{" "}
             </label>
             <input type="text" className="p-3 rounded-lg border-2 w-2/3" />
           </div>

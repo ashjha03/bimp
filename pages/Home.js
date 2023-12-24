@@ -1,10 +1,14 @@
 import Featured from "@/components/Featured";
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 
 const Home = () => {
   return (
     <div className="">
+      <Head>
+        <title>BIMP | BRAND INFLUENCER MARKETPLACE</title>
+      </Head>
       <Navbar />
       <main className="py-24 bg-gradient-to-r from-white to-pink-100">
         <h1 className="text-5xl text-center font-bold text-pink-500">

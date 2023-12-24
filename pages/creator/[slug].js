@@ -1,12 +1,18 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const page = () => {
   const Router = useRouter();
   const user = Router.query.slug;
+  let USER = "";
+  if (user) USER = user[0].toUpperCase() + user.slice(1);
   return (
     <div>
+      <Head>
+        <title>{USER} | BIMP User Page</title>
+      </Head>
       <Navbar />
       <div className="user-profile p-12 gap-2 max-w-screen-xl mx-auto">
         <div className="userimg pb-10">
@@ -31,7 +37,7 @@ const page = () => {
             width={480}
           />
           <span className="">
-            <h1 className="text-4xl">{user}</h1>
+            <h1 className="text-4xl">{USER}</h1>
             <h3 className="text-2xl pl-2">@{user}</h3>
           </span>
         </div>

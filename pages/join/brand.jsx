@@ -1,11 +1,15 @@
 import Featured from "@/components/Featured";
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 import React from "react";
 
 const Brand = () => {
   return (
     <div>
+      <Head>
+        <title>BIMP | Join as Brand</title>
+      </Head>
       <Navbar />
       <div className="pt-16">
         <h1 className="text-4xl text-center pb-4 font-bold leading-snug">
