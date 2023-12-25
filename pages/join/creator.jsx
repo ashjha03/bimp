@@ -1,39 +1,27 @@
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
-import Creator from "../../models/Creator";
 
 const Creators = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const instagramFollowers = e.target.instagramFollowers.value;
-    const youtubeSubscribers = e.target.youtubeSubscribers.value;
-    const username = e.target.username.value;
-    const address = e.target.address.value;
-    const tagline = e.target.tagline.value;
-    const reelPrice = e.target.reelPrice.value;
-    const profileImg = e.target.profileImg.value;
-    const coverImg = e.target.coverImg.value;
-    const addImg1 = e.target.addImg1.value;
-    const addImg2 = e.target.addImg2.value;
+    let data = {
+      name: e.target.name.value,
+      instagramFollowers: e.target.instagramFollowers.value,
+      youtubeSubscribers: e.target.youtubeSubscribers.value,
+      username: e.target.username.value,
+      address: e.target.address.value,
+      tagline: e.target.tagline.value,
+      reelPrice: e.target.reelPrice.value,
+      profileImg: e.target.profileImg.value,
+      coverImg: e.target.coverImg.value,
+      addImg1: e.target.addImg1.value,
+      addImg2: e.target.addImg2.value,
+    };
 
-    let creator = new Creator({
-      name,
-      instagramFollowers,
-      youtubeSubscribers,
-      username,
-      address,
-      tagline,
-      reelPrice,
-      profileImg,
-      coverImg,
-      addImg1,
-      addImg2,
-    });
     fetch("/api/addCreator", {
       method: "POST",
-      body: creator,
+      body: JSON.stringify(data),
     });
   };
   return (
@@ -49,7 +37,7 @@ const Creators = () => {
         </p>
 
         <form
-          id="creatorForm"
+          name="creatorForm"
           onSubmit={handleSubmit}
           className="max-w-5xl border-2 rounded-xl shadow-lg grid gap-5 mx-auto mt-10 px-12 py-12"
         >
