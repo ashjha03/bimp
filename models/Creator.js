@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const CreatorSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    instagramFollowers: { type: Number, default: "0" },
-    youtubeSubscribers: { type: Number, default: "0" },
+    instagramFollowers: { type: String, default: "0" },
+    youtubeSubscribers: { type: String, default: "0" },
     username: { type: String, required: true, unique: true },
     address: { type: String, default: "" },
     tagline: { type: String, default: "" },

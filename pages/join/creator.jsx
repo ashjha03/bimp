@@ -27,7 +27,7 @@ const Creators = () => {
   return (
     <div>
       <Head>
-        <title>BIMP | Join as Creator</title>
+        <title>BIMP || Join as Creator</title>
       </Head>
       <Navbar />
       <div className="py-10 px-12">

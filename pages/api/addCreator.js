@@ -10,5 +10,5 @@ export default async function addCreator(req, res) {
   const result = await db.collection("collabstr").insertOne(newcreator);
   console.log(result);
 
-  return res.json({ message: "Creator Added" });
+  return res.json({ message: "Creator Added", success: true });
 }
