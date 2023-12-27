@@ -3,7 +3,10 @@ import Image from "next/image";
 
 const ProfileBox = ({ user }) => {
   return (
-    <Link href="/creator/ashjha03" className="rounded-xl shadow-xl py-4">
+    <Link
+      href={`/creator/${user.username}`}
+      className="rounded-xl shadow-xl py-4"
+    >
       <Image
         src={user.profileImg}
         alt="Creator"

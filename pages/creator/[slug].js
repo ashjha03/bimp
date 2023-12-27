@@ -15,7 +15,7 @@ const Page = () => {
         if (!creator) {
           const res = await fetch(`/api/getCreator?username=${user}`);
           const data = await res.json();
-          setCreator(data.user);
+          setCreator(data.data[0]);
         }
       } catch (err) {
         console.log("Error: ", err);
@@ -26,7 +26,7 @@ const Page = () => {
   return (
     <div>
       <Head>
-        <title>{creator && creator.name} | BIMP User Page</title>
+        <title>{creator && creator.name | `BIMP User Page`}</title>
       </Head>
       <Navbar />
       {creator ? (
