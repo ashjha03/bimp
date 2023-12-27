@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProfileBox from "./profile/ProfileBox";
 
@@ -13,7 +11,6 @@ const Featured = ({ title, description }) => {
           const res = await fetch("/api/getCreator?username=ashjha03");
           const data = await res.json();
           setUser(data.user);
-          console.log(user);
         }
       } catch (err) {
         console.log("Error: ", err);
