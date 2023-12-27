@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    mongodburl: "Your MongoDB connection String",
+  },
   reactStrictMode: true,
 };
 

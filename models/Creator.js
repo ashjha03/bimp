@@ -16,5 +16,5 @@ const CreatorSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.Creator ||
-  mongoose.model("Creator", CreatorSchema);
+mongoose.models = {};
+export default mongoose.model("Creator", CreatorSchema);

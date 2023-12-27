@@ -13,7 +13,7 @@ const Page = () => {
     (async () => {
       try {
         if (!creator) {
-          const res = await fetch(`/api/getCreator?username=ashjha03`);
+          const res = await fetch(`/api/getCreator?username=${user}`);
           const data = await res.json();
           setCreator(data.user);
         }
@@ -23,7 +23,6 @@ const Page = () => {
     })();
   }, []);
 
-  const USER = user ? user[0].toUpperCase() + user.slice(1) : "";
   return (
     <div>
       <Head>
