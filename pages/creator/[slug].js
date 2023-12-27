@@ -26,7 +26,7 @@ const Page = () => {
   return (
     <div>
       <Head>
-        <title>{creator && creator.name | `BIMP User Page`}</title>
+        <title>{creator && creator.name} | BIMP User Page</title>
       </Head>
       <Navbar />
       {creator ? (
@@ -105,28 +105,28 @@ const Page = () => {
               <Image
                 src={creator.coverImg}
                 alt="Creator"
-                className="w-[53vw] mx-auto rounded-xl"
+                className="h-[38vh] mx-auto rounded-xl"
                 height={500}
                 width={500}
               />
               <Image
                 src={creator.profileImg}
                 alt="Creator"
-                className="w-[53vw] mx-auto rounded-xl"
+                className="h-[38vh] mx-auto rounded-xl"
                 height={500}
                 width={500}
               />
               <Image
                 src={creator.addImg1}
                 alt="Creator"
-                className="w-[53vw] mx-auto rounded-xl"
+                className="h-[38vh] mx-auto rounded-xl"
                 height={500}
                 width={500}
               />
               <Image
                 src={creator.addImg2}
                 alt="Creator"
-                className="w-[53vw] mx-auto rounded-xl"
+                className="h-[38vh] mx-auto rounded-xl"
                 height={500}
                 width={500}
               />

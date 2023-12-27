@@ -11,7 +11,6 @@ const Featured = ({ title, description }) => {
           const res = await fetch("/api/getAllCreators");
           const data = await res.json();
           setUsers(data.data);
-          console.log(data.data);
         }
       } catch (err) {
         console.log("Error: ", err);

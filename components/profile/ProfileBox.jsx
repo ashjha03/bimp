@@ -14,14 +14,15 @@ const ProfileBox = ({ user }) => {
         height={500}
         width={500}
       />{" "}
-      <div className="details px-4">
-        <h1 className="text-md font-semibold">
-          {user.name} <br /> {user.username}
-        </h1>
+      <div className="details px-4 ">
+        <div className="text-md flex justify-between items-center py-1">
+          <h1 className="text-md font-semibold">{user.name}</h1>
+          <h1 className="text-md">@{user.username}</h1>
+        </div>
         <h3 className="text-sm">{user.address}</h3>
-        <div className="text-md flex justify-between py-1 font-semibold">
+        <div className="text-md flex justify-between py-1 items-center font-semibold">
           <p>Instagram</p>
-          <p>{user.reelPrice}</p>
+          <p>₹ {user.reelPrice}</p>
         </div>
         <p className="text-sm mt-1">{user.tagline}</p>
       </div>
