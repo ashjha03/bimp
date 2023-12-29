@@ -13,10 +13,10 @@ const Navbar = () => {
         <li>How it works</li>
         <li>Login</li>
         <li>
-          <Link href="/join/brand"> Join as Brand</Link>
+          <Link href="/join/Brand"> Join as Brand</Link>
         </li>
         <li>
-          <Link href="/join/creator"> Join as Creator</Link>
+          <Link href="/join/Creator"> Join as Creator</Link>
         </li>
       </ul>
     </nav>

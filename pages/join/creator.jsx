@@ -1,9 +1,11 @@
 import HowWeWork from "@/components/HowWeWork";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Creators = () => {
-  const handleSubmit = (e) => {
+  const Router = useRouter();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let data = {
       name: e.target.name.value,
@@ -19,11 +21,14 @@ const Creators = () => {
       addImg2: e.target.addImg2.value,
     };
 
-    fetch("/api/addCreator", {
+    const res = await fetch("/api/addCreator", {
       method: "POST",
       body: JSON.stringify(data),
     });
+    const creator = await res.json();
+    Router.push(`/creator/${creator.username}`);
   };
+
   return (
     <div>
       <Head>
