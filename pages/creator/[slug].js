@@ -84,7 +84,7 @@ const Page = () => {
               <div className="box border-2 rounded-lg border-pink-700 p-3">
                 <div className="flex justify-between">
                   <h1 className="text-xl">1 Instagram Reel</h1>
-                  <h3 className="text-xl">₹ {creator.reelPrice}</h3>
+                  <h3 className="text-xl">₹ {creator.reelPrice / 2}</h3>
                 </div>
               </div>
             </div>
