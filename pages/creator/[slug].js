@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 
 const Page = () => {
   const Router = useRouter();
-  const user = Router.query.slug;
+  let user = null;
+  if (Router.query.slug) user = Router.query.slug;
   const [creator, setCreator] = useState(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Page = () => {
         console.log("Error: ", err);
       }
     })();
-  }, []);
+  }, [user, creator]);
 
   return (
     <div>

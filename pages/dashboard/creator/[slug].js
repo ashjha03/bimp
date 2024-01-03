@@ -7,7 +7,8 @@ import { useState, useEffect } from "react";
 
 const Creator = () => {
   const Router = useRouter();
-  const user = Router.query.slug;
+  let user = null;
+  if (Router.query.slug) user = Router.query.slug;
   const [creator, setCreator] = useState(null);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const Creator = () => {
         console.log("Error: ", err);
       }
     })();
-  }, []);
+  }, [user, creator]);
 
   return (
     <div>
@@ -67,7 +68,9 @@ const Creator = () => {
               <div className="box border-2 rounded-lg border-pink-700 p-3">
                 <div className="flex justify-between">
                   <h1 className="text-xl">1 Instagram Post Feed Photo</h1>
-                  <h3 className="text-xl">₹ {creator.reelPrice}</h3>
+                  <h3 className="text-xl">
+                    ₹ {creator ? creator.reelPrice : 25000}
+                  </h3>
                 </div>
               </div>
               <div className="box border-2 rounded-lg border-pink-700 p-3">
@@ -120,7 +123,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -134,7 +139,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -148,7 +155,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -162,7 +171,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -197,7 +208,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -211,7 +224,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -225,7 +240,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
               <tr>
                 <td className="text-left p-4">
@@ -239,7 +256,9 @@ const Creator = () => {
                   </span>
                 </td>
                 <td className="text-center p-4">Apple</td>
-                <td className="text-right p-4"> 25,000.00</td>
+                <td className="text-right p-4">
+                  {creator ? creator.reelPrice : 25000}
+                </td>
               </tr>
             </tbody>
           </table>
